@@ -10,6 +10,12 @@ import UIKit
 
 class RegisterViewController: UIViewController {
     
+    
+    @IBOutlet weak var loginTextfield: UITextField!
+    
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,5 +26,7 @@ class RegisterViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func registerPressed(_ sender: UIButton) {
+    }
     
 }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="j8p-Lq-wWF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="j8p-Lq-wWF">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,13 +13,14 @@
         <!--Welcome-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" userLabel="Welcome" customClass="ViewController" customModule="TennisMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="Welcome" customClass="WelcomeViewController" customModule="TennisMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tennisMeWelcomeBackground" translatesAutoresizingMaskIntoConstraints="NO" id="TAF-bj-QGE">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C5X-sp-HUz">
                                 <rect key="frame" x="0.0" y="569" width="375" height="34"/>
@@ -67,7 +68,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Welcome" id="H6i-uz-RWY" userLabel="Welcome"/>
                     <connections>
-                        <segue destination="bTF-mk-wu5" kind="show" identifier="goToContactList" id="uAf-V2-jzI"/>
+                        <segue destination="yhg-5e-0KU" kind="show" identifier="goToContacts" id="4GF-Z6-nBd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -77,13 +78,14 @@
         <!--Log In-->
         <scene sceneID="mIP-Cm-OVX">
             <objects>
-                <viewController id="tNT-Ly-CJs" userLabel="Log In" sceneMemberID="viewController">
+                <viewController id="tNT-Ly-CJs" userLabel="Log In" customClass="LogInViewController" customModule="TennisMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="esf-X1-IwE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tennisMeLoginBackground" translatesAutoresizingMaskIntoConstraints="NO" id="GY5-S2-jOp">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tennisMeWelcomeBackground" translatesAutoresizingMaskIntoConstraints="NO" id="GY5-S2-jOp">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0M4-Sn-5pm">
                                 <rect key="frame" x="34" y="234.5" width="307" height="134"/>
@@ -108,7 +110,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="bTF-mk-wu5" kind="show" id="VqQ-8J-eT9"/>
+                                            <action selector="loginPressed:" destination="tNT-Ly-CJs" eventType="touchUpInside" id="eV2-T4-0dZ"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -127,63 +129,27 @@
                         <viewLayoutGuide key="safeArea" id="fH7-W6-Mp2"/>
                     </view>
                     <navigationItem key="navigationItem" id="q3l-PW-x09"/>
+                    <connections>
+                        <outlet property="loginTextfield" destination="8Sc-f4-J3x" id="6Xt-zJ-W7R"/>
+                        <outlet property="passwordTextfield" destination="EJ6-yc-NIK" id="bsd-5F-7ss"/>
+                        <segue destination="yhg-5e-0KU" kind="show" identifier="goToContacts" id="vdx-y2-HV9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MGz-Z6-5ng" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1244" y="-287"/>
         </scene>
-        <!--Contacts-->
-        <scene sceneID="CVS-pM-Atg">
-            <objects>
-                <tableViewController id="bTF-mk-wu5" userLabel="Contacts" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="fMy-6D-moE" userLabel="Contacts Table View">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContactCell" id="177-AO-muB" userLabel="ContactCell">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="177-AO-muB" id="j1h-gb-0UF">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="vHm-bt-Avf" kind="show" identifier="goToChat" id="eXe-pr-chS"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="bTF-mk-wu5" id="kUg-XM-bD5"/>
-                            <outlet property="delegate" destination="bTF-mk-wu5" id="S3V-43-hBa"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="Zw1-TV-MWT">
-                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="nUJ-iG-TSx">
-                            <color key="tintColor" red="0.83216959239999999" green="0.98548370600000001" blue="0.47333085539999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Settings" id="fCW-Cz-AdO">
-                            <color key="tintColor" red="0.83216959239999999" green="0.98548370600000001" blue="0.47333085539999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <segue destination="ntc-XB-kDW" kind="show" id="qfl-FM-jgI"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Q62-gV-x61" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2140" y="118"/>
-        </scene>
         <!--Settings-->
         <scene sceneID="dCZ-ao-oQz">
             <objects>
-                <viewController id="ntc-XB-kDW" userLabel="Settings" sceneMemberID="viewController">
+                <viewController id="ntc-XB-kDW" userLabel="Settings" customClass="SettingsViewController" customModule="TennisMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cE9-jK-kbF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YMl-TI-zt0">
                                 <rect key="frame" x="8" y="4" width="359" height="34"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="cPq-vI-oDo"/>
                                 </constraints>
@@ -204,16 +170,73 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hcx-cx-QW9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2140" y="949"/>
+            <point key="canvasLocation" x="2188" y="835"/>
         </scene>
-        <!--TennisMe Chat-->
+        <!--Contacts-->
+        <scene sceneID="VWC-G8-kPJ">
+            <objects>
+                <viewController id="yhg-5e-0KU" userLabel="Contacts" customClass="ContactsViewController" customModule="TennisMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Uwt-pI-ygh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lwz-ay-NbI">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContactCell" id="4eD-ol-VmV">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4eD-ol-VmV" id="vLB-NM-vLV">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="vHm-bt-Avf" kind="show" id="Ue0-XC-UBJ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lwz-ay-NbI" firstAttribute="top" secondItem="Uwt-pI-ygh" secondAttribute="top" id="QI5-gC-mbX"/>
+                            <constraint firstAttribute="bottom" secondItem="lwz-ay-NbI" secondAttribute="bottom" id="RyX-tx-BPb"/>
+                            <constraint firstAttribute="trailing" secondItem="lwz-ay-NbI" secondAttribute="trailing" id="aSO-Qb-bbt"/>
+                            <constraint firstItem="lwz-ay-NbI" firstAttribute="leading" secondItem="Uwt-pI-ygh" secondAttribute="leading" id="bOT-sG-MUh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Mqv-ep-Pfb"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Contacts" id="6SX-SL-pD7">
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="0AN-Cf-PwZ"/>
+                        <barButtonItem key="rightBarButtonItem" id="cDf-mB-JFH">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="SQw-vw-LA0">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Settings"/>
+                            </button>
+                            <connections>
+                                <segue destination="ntc-XB-kDW" kind="show" id="ASt-ra-Vxf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hDX-5r-Vry" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2188" y="118"/>
+        </scene>
+        <!--Chat-->
         <scene sceneID="tqY-1i-Y0i">
             <objects>
-                <viewController id="vHm-bt-Avf" userLabel="TennisMe Chat" sceneMemberID="viewController">
+                <viewController id="vHm-bt-Avf" userLabel="Chat" customClass="ChatViewController" customModule="TennisMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="649-aC-2Ui">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tennisMeLoginBackground" translatesAutoresizingMaskIntoConstraints="NO" id="dI0-Ug-WvK">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.83216959239999999" green="0.98548370600000001" blue="0.47333085539999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dIj-WI-uJa">
                                 <rect key="frame" x="0.0" y="561" width="375" height="42"/>
                                 <subviews>
@@ -235,7 +258,7 @@
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="1"/>
+                                                <integer key="value" value="2"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </button>
@@ -270,8 +293,12 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="dI0-Ug-WvK" secondAttribute="bottom" id="2DD-4C-R4d"/>
+                            <constraint firstItem="dI0-Ug-WvK" firstAttribute="leading" secondItem="649-aC-2Ui" secondAttribute="leading" id="2W0-11-ruo"/>
                             <constraint firstItem="dIj-WI-uJa" firstAttribute="top" secondItem="S0z-ae-gBI" secondAttribute="bottom" id="9Qk-dg-f5t"/>
+                            <constraint firstItem="dI0-Ug-WvK" firstAttribute="top" secondItem="649-aC-2Ui" secondAttribute="top" id="DT5-Ic-BO5"/>
                             <constraint firstAttribute="bottom" secondItem="dIj-WI-uJa" secondAttribute="bottom" id="IB5-Iu-1Lq"/>
+                            <constraint firstAttribute="trailing" secondItem="dI0-Ug-WvK" secondAttribute="trailing" id="Nr3-tM-QIJ"/>
                             <constraint firstItem="dIj-WI-uJa" firstAttribute="leading" secondItem="649-aC-2Ui" secondAttribute="leading" id="Nsb-g2-hlc"/>
                             <constraint firstItem="S0z-ae-gBI" firstAttribute="top" secondItem="e7L-1m-o4o" secondAttribute="top" id="X91-n6-qyk"/>
                             <constraint firstItem="S0z-ae-gBI" firstAttribute="leading" secondItem="e7L-1m-o4o" secondAttribute="leading" id="fRh-sW-maV"/>
@@ -283,7 +310,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S4W-Hk-DDx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3030" y="118"/>
+            <point key="canvasLocation" x="3029.5999999999999" y="117.39130434782609"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oQ5-z2-ns6">
@@ -313,13 +340,14 @@
         <!--Register-->
         <scene sceneID="tSY-IG-dDl">
             <objects>
-                <viewController id="NVh-AK-iFe" userLabel="Register" sceneMemberID="viewController">
+                <viewController id="NVh-AK-iFe" userLabel="Register" customClass="RegisterViewController" customModule="TennisMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="V0l-z1-NeD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tennisMeLoginBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Ae7-YY-Vgf">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tennisMeWelcomeBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Ae7-YY-Vgf">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="HlN-D3-Vdl">
                                 <rect key="frame" x="34" y="234.5" width="307" height="134"/>
@@ -344,7 +372,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="bTF-mk-wu5" kind="show" id="cSi-oz-e3R"/>
+                                            <action selector="registerPressed:" destination="NVh-AK-iFe" eventType="touchUpInside" id="DQN-ws-YRw"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -363,6 +391,11 @@
                         <viewLayoutGuide key="safeArea" id="hiP-y6-seN"/>
                     </view>
                     <navigationItem key="navigationItem" id="juO-Jz-R8x"/>
+                    <connections>
+                        <outlet property="loginTextfield" destination="3ty-FW-kSp" id="zb9-9u-bO7"/>
+                        <outlet property="passwordTextField" destination="qMx-d8-FUY" id="TrY-NZ-kjs"/>
+                        <segue destination="yhg-5e-0KU" kind="show" identifier="goToContacts" id="EAi-Gx-ele"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VDo-7T-CH7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -374,6 +407,6 @@
         <image name="tennisMeWelcomeBackground" width="621" height="666"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="VqQ-8J-eT9"/>
+        <segue reference="EAi-Gx-ele"/>
     </inferredMetricsTieBreakers>
 </document>

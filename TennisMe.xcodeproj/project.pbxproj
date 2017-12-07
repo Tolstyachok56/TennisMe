@@ -7,21 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0401117F1FD958840092E6AC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0401117E1FD958840092E6AC /* GoogleService-Info.plist */; };
+		040111851FD95B000092E6AC /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040111841FD95B000092E6AC /* LogInViewController.swift */; };
+		040111871FD95B520092E6AC /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040111861FD95B520092E6AC /* RegisterViewController.swift */; };
+		0401118A1FD95BB70092E6AC /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040111891FD95BB70092E6AC /* ContactsViewController.swift */; };
+		0401118E1FD95E6C0092E6AC /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0401118D1FD95E6C0092E6AC /* ChatViewController.swift */; };
+		040111901FD95EAF0092E6AC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0401118F1FD95EAF0092E6AC /* SettingsViewController.swift */; };
+		040111951FD9643A0092E6AC /* ContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040111941FD9643A0092E6AC /* ContactCell.xib */; };
+		040111971FD967770092E6AC /* CustomContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040111961FD967770092E6AC /* CustomContactCell.swift */; };
+		0401119A1FD969F40092E6AC /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040111991FD969F40092E6AC /* MessageCell.xib */; };
+		0401119C1FD96A070092E6AC /* CustomMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0401119B1FD96A070092E6AC /* CustomMessageCell.swift */; };
+		0401119E1FD9721B0092E6AC /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0401119D1FD9721B0092E6AC /* Message.swift */; };
 		043BFDEA1FD803E60067020B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043BFDE91FD803E60067020B /* AppDelegate.swift */; };
-		043BFDEC1FD803E60067020B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043BFDEB1FD803E60067020B /* ViewController.swift */; };
+		043BFDEC1FD803E60067020B /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043BFDEB1FD803E60067020B /* WelcomeViewController.swift */; };
 		043BFDEF1FD803E60067020B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 043BFDED1FD803E60067020B /* Main.storyboard */; };
 		043BFDF11FD803E60067020B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 043BFDF01FD803E60067020B /* Assets.xcassets */; };
 		043BFDF41FD803E60067020B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 043BFDF21FD803E60067020B /* LaunchScreen.storyboard */; };
+		F74F685EDAEFB31985016174 /* Pods_TennisMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3004996C169E2BCFF9DC3944 /* Pods_TennisMe.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0401117E1FD958840092E6AC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		040111841FD95B000092E6AC /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		040111861FD95B520092E6AC /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		040111891FD95BB70092E6AC /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		0401118D1FD95E6C0092E6AC /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		0401118F1FD95EAF0092E6AC /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		040111941FD9643A0092E6AC /* ContactCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactCell.xib; sourceTree = "<group>"; };
+		040111961FD967770092E6AC /* CustomContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomContactCell.swift; sourceTree = "<group>"; };
+		040111991FD969F40092E6AC /* MessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
+		0401119B1FD96A070092E6AC /* CustomMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMessageCell.swift; sourceTree = "<group>"; };
+		0401119D1FD9721B0092E6AC /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		043BFDE61FD803E60067020B /* TennisMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TennisMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		043BFDE91FD803E60067020B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		043BFDEB1FD803E60067020B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		043BFDEB1FD803E60067020B /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		043BFDEE1FD803E60067020B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		043BFDF01FD803E60067020B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		043BFDF31FD803E60067020B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		043BFDF51FD803E60067020B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3004996C169E2BCFF9DC3944 /* Pods_TennisMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TennisMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		799DAAA0C9F3E182EE5E3C93 /* Pods-TennisMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-TennisMe/Pods-TennisMe.release.xcconfig"; sourceTree = "<group>"; };
+		7D1187767753C3398C226A90 /* Pods-TennisMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TennisMe/Pods-TennisMe.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +55,80 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F74F685EDAEFB31985016174 /* Pods_TennisMe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		040111801FD959170092E6AC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				043BFDED1FD803E60067020B /* Main.storyboard */,
+				043BFDF21FD803E60067020B /* LaunchScreen.storyboard */,
+				040111911FD963C90092E6AC /* CustomContactCell */,
+				040111981FD969DE0092E6AC /* CustomMessageCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		040111811FD959220092E6AC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				043BFDE91FD803E60067020B /* AppDelegate.swift */,
+				043BFDEB1FD803E60067020B /* WelcomeViewController.swift */,
+				040111841FD95B000092E6AC /* LogInViewController.swift */,
+				040111861FD95B520092E6AC /* RegisterViewController.swift */,
+				040111891FD95BB70092E6AC /* ContactsViewController.swift */,
+				0401118D1FD95E6C0092E6AC /* ChatViewController.swift */,
+				0401118F1FD95EAF0092E6AC /* SettingsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		040111821FD9596E0092E6AC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0401119D1FD9721B0092E6AC /* Message.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		040111831FD959900092E6AC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				043BFDF51FD803E60067020B /* Info.plist */,
+				0401117E1FD958840092E6AC /* GoogleService-Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		040111911FD963C90092E6AC /* CustomContactCell */ = {
+			isa = PBXGroup;
+			children = (
+				040111941FD9643A0092E6AC /* ContactCell.xib */,
+				040111961FD967770092E6AC /* CustomContactCell.swift */,
+			);
+			path = CustomContactCell;
+			sourceTree = "<group>";
+		};
+		040111981FD969DE0092E6AC /* CustomMessageCell */ = {
+			isa = PBXGroup;
+			children = (
+				040111991FD969F40092E6AC /* MessageCell.xib */,
+				0401119B1FD96A070092E6AC /* CustomMessageCell.swift */,
+			);
+			path = CustomMessageCell;
+			sourceTree = "<group>";
+		};
 		043BFDDD1FD803E60067020B = {
 			isa = PBXGroup;
 			children = (
 				043BFDE81FD803E60067020B /* TennisMe */,
 				043BFDE71FD803E60067020B /* Products */,
+				9E72298C0E3A68139A3454B2 /* Pods */,
+				28E5C196DC9D6E0119F6A311 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +143,30 @@
 		043BFDE81FD803E60067020B /* TennisMe */ = {
 			isa = PBXGroup;
 			children = (
-				043BFDE91FD803E60067020B /* AppDelegate.swift */,
-				043BFDEB1FD803E60067020B /* ViewController.swift */,
-				043BFDED1FD803E60067020B /* Main.storyboard */,
+				040111821FD9596E0092E6AC /* Model */,
+				040111811FD959220092E6AC /* Controller */,
+				040111801FD959170092E6AC /* View */,
 				043BFDF01FD803E60067020B /* Assets.xcassets */,
-				043BFDF21FD803E60067020B /* LaunchScreen.storyboard */,
-				043BFDF51FD803E60067020B /* Info.plist */,
+				040111831FD959900092E6AC /* Supporting Files */,
 			);
 			path = TennisMe;
+			sourceTree = "<group>";
+		};
+		28E5C196DC9D6E0119F6A311 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3004996C169E2BCFF9DC3944 /* Pods_TennisMe.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9E72298C0E3A68139A3454B2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7D1187767753C3398C226A90 /* Pods-TennisMe.debug.xcconfig */,
+				799DAAA0C9F3E182EE5E3C93 /* Pods-TennisMe.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +176,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 043BFDF81FD803E60067020B /* Build configuration list for PBXNativeTarget "TennisMe" */;
 			buildPhases = (
+				0D6A8648E293048630D73202 /* [CP] Check Pods Manifest.lock */,
 				043BFDE21FD803E60067020B /* Sources */,
 				043BFDE31FD803E60067020B /* Frameworks */,
 				043BFDE41FD803E60067020B /* Resources */,
+				E9A722715DE06C8643915C5C /* [CP] Embed Pods Frameworks */,
+				8E384A6C04AB58521540A0DE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -124,20 +232,91 @@
 			buildActionMask = 2147483647;
 			files = (
 				043BFDF41FD803E60067020B /* LaunchScreen.storyboard in Resources */,
+				0401119A1FD969F40092E6AC /* MessageCell.xib in Resources */,
+				0401117F1FD958840092E6AC /* GoogleService-Info.plist in Resources */,
 				043BFDF11FD803E60067020B /* Assets.xcassets in Resources */,
+				040111951FD9643A0092E6AC /* ContactCell.xib in Resources */,
 				043BFDEF1FD803E60067020B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0D6A8648E293048630D73202 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TennisMe-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8E384A6C04AB58521540A0DE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TennisMe/Pods-TennisMe-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9A722715DE06C8643915C5C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TennisMe/Pods-TennisMe-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TennisMe/Pods-TennisMe-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		043BFDE21FD803E60067020B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				043BFDEC1FD803E60067020B /* ViewController.swift in Sources */,
+				0401119C1FD96A070092E6AC /* CustomMessageCell.swift in Sources */,
+				043BFDEC1FD803E60067020B /* WelcomeViewController.swift in Sources */,
+				040111971FD967770092E6AC /* CustomContactCell.swift in Sources */,
 				043BFDEA1FD803E60067020B /* AppDelegate.swift in Sources */,
+				040111901FD95EAF0092E6AC /* SettingsViewController.swift in Sources */,
+				040111851FD95B000092E6AC /* LogInViewController.swift in Sources */,
+				040111871FD95B520092E6AC /* RegisterViewController.swift in Sources */,
+				0401119E1FD9721B0092E6AC /* Message.swift in Sources */,
+				0401118E1FD95E6C0092E6AC /* ChatViewController.swift in Sources */,
+				0401118A1FD95BB70092E6AC /* ContactsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,11 +451,12 @@
 		};
 		043BFDF91FD803E60067020B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D1187767753C3398C226A90 /* Pods-TennisMe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9E7V52UM47;
-				INFOPLIST_FILE = TennisMe/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TennisMe/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vbadisova.TennisMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -287,11 +467,12 @@
 		};
 		043BFDFA1FD803E60067020B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 799DAAA0C9F3E182EE5E3C93 /* Pods-TennisMe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9E7V52UM47;
-				INFOPLIST_FILE = TennisMe/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TennisMe/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vbadisova.TennisMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";

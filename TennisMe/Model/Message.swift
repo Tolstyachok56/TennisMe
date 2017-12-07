@@ -6,4 +6,7 @@
 //  Copyright © 2017 Виктория Бадисова. All rights reserved.
 //
 
-import Foundation
+class Message {
+    var sender: String = ""
+    var message: String = ""
+}
