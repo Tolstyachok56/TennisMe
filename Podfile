@@ -10,5 +10,7 @@ target 'TennisMe' do
 pod 'SVProgressHUD'
 pod 'ChameleonFramework'
 pod 'Firebase/Core'
+pod 'Firebase/Auth'
+pod 'Firebase/Database'
 
 end

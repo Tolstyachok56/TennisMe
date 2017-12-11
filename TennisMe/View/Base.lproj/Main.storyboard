@@ -90,7 +90,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0M4-Sn-5pm">
                                 <rect key="frame" x="34" y="234.5" width="307" height="134"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="login" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Sc-f4-J3x">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Sc-f4-J3x">
                                         <rect key="frame" x="0.0" y="0.0" width="307" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -157,6 +157,9 @@
                                 <state key="normal" title="Log out">
                                     <color key="titleColor" red="0.83216959239999999" green="0.98548370600000001" blue="0.47333085539999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="logoutPressed:" destination="ntc-XB-kDW" eventType="touchUpInside" id="oNY-qg-8Yh"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -170,7 +173,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hcx-cx-QW9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2188" y="835"/>
+            <point key="canvasLocation" x="2110" y="954"/>
         </scene>
         <!--Contacts-->
         <scene sceneID="VWC-G8-kPJ">
@@ -216,14 +219,14 @@
                                 <state key="normal" title="Settings"/>
                             </button>
                             <connections>
-                                <segue destination="ntc-XB-kDW" kind="show" id="ASt-ra-Vxf"/>
+                                <segue destination="ntc-XB-kDW" kind="show" identifier="goToSettings" id="ASt-ra-Vxf"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hDX-5r-Vry" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2188" y="118"/>
+            <point key="canvasLocation" x="2110" y="117"/>
         </scene>
         <!--Chat-->
         <scene sceneID="tqY-1i-Y0i">
@@ -260,6 +263,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="2"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                 </subviews>
@@ -310,7 +314,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S4W-Hk-DDx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3029.5999999999999" y="117.39130434782609"/>
+            <point key="canvasLocation" x="2922" y="118"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oQ5-z2-ns6">
@@ -352,7 +356,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="HlN-D3-Vdl">
                                 <rect key="frame" x="34" y="234.5" width="307" height="134"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="login" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3ty-FW-kSp">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3ty-FW-kSp">
                                         <rect key="frame" x="0.0" y="0.0" width="307" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -407,6 +411,6 @@
         <image name="tennisMeWelcomeBackground" width="621" height="666"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="EAi-Gx-ele"/>
+        <segue reference="vdx-y2-HV9"/>
     </inferredMetricsTieBreakers>
 </document>

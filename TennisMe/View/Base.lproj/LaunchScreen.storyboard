@@ -21,13 +21,23 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tennisMeWelcomeBackground" translatesAutoresizingMaskIntoConstraints="NO" id="4VE-yD-zxI">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Launching..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XQp-az-yTC">
+                                <rect key="frame" x="109" y="314.5" width="157" height="38"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <color key="textColor" red="0.83216959239999999" green="0.98548370600000001" blue="0.47333085539999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="3" height="-3"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="4VE-yD-zxI" secondAttribute="bottom" id="15C-S8-flc"/>
+                            <constraint firstItem="XQp-az-yTC" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="V4p-1A-wH2"/>
                             <constraint firstAttribute="trailing" secondItem="4VE-yD-zxI" secondAttribute="trailing" id="YEj-h2-jNs"/>
                             <constraint firstItem="4VE-yD-zxI" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Z6T-jJ-iZH"/>
                             <constraint firstItem="4VE-yD-zxI" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="eDI-qC-j8w"/>
+                            <constraint firstItem="XQp-az-yTC" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="sBY-Db-H7F"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

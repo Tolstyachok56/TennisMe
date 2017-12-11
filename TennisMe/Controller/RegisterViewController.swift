@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import Firebase
+import SVProgressHUD
+
 
 class RegisterViewController: UIViewController {
     
     
     @IBOutlet weak var loginTextfield: UITextField!
-    
     @IBOutlet weak var passwordTextField: UITextField!
     
     
@@ -27,6 +29,18 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func registerPressed(_ sender: UIButton) {
+        SVProgressHUD.show()
+        
+        Auth.auth().createUser(withEmail: loginTextfield.text!, password: passwordTextField.text!) { (user, error) in
+            if error != nil {
+                print(error?.localizedDescription as Any)
+                SVProgressHUD.showError(withStatus: error?.localizedDescription)
+            } else {
+                print("Registrarion complete")
+                SVProgressHUD.dismiss()
+                self.performSegue(withIdentifier: "goToContacts", sender: self)
+            }
+        }
     }
     
 }
