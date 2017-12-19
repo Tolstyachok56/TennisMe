@@ -210,19 +210,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Mqv-ep-Pfb"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Contacts" id="6SX-SL-pD7">
-                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="0AN-Cf-PwZ"/>
-                        <barButtonItem key="rightBarButtonItem" id="cDf-mB-JFH">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="SQw-vw-LA0">
-                                <rect key="frame" x="276" y="7" width="83" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Settings"/>
-                            </button>
-                            <connections>
-                                <segue destination="ntc-XB-kDW" kind="show" identifier="goToSettings" id="ASt-ra-Vxf"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Contacts" id="6SX-SL-pD7"/>
+                    <connections>
+                        <segue destination="ntc-XB-kDW" kind="show" identifier="goToSettings" id="lcO-bc-dL7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hDX-5r-Vry" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

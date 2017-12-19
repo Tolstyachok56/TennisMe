@@ -18,6 +18,7 @@
 		0401119A1FD969F40092E6AC /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040111991FD969F40092E6AC /* MessageCell.xib */; };
 		0401119C1FD96A070092E6AC /* CustomMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0401119B1FD96A070092E6AC /* CustomMessageCell.swift */; };
 		0401119E1FD9721B0092E6AC /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0401119D1FD9721B0092E6AC /* Message.swift */; };
+		0410ABAF1FE9322500A38EF3 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0410ABAE1FE9322500A38EF3 /* Color.swift */; };
 		043BFDEA1FD803E60067020B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043BFDE91FD803E60067020B /* AppDelegate.swift */; };
 		043BFDEC1FD803E60067020B /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043BFDEB1FD803E60067020B /* WelcomeViewController.swift */; };
 		043BFDEF1FD803E60067020B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 043BFDED1FD803E60067020B /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 		040111991FD969F40092E6AC /* MessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
 		0401119B1FD96A070092E6AC /* CustomMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMessageCell.swift; sourceTree = "<group>"; };
 		0401119D1FD9721B0092E6AC /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		0410ABAE1FE9322500A38EF3 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		043BFDE61FD803E60067020B /* TennisMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TennisMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		043BFDE91FD803E60067020B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		043BFDEB1FD803E60067020B /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				0401119D1FD9721B0092E6AC /* Message.swift */,
+				0410ABAE1FE9322500A38EF3 /* Color.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 			files = (
 				0401119C1FD96A070092E6AC /* CustomMessageCell.swift in Sources */,
 				043BFDEC1FD803E60067020B /* WelcomeViewController.swift in Sources */,
+				0410ABAF1FE9322500A38EF3 /* Color.swift in Sources */,
 				040111971FD967770092E6AC /* CustomContactCell.swift in Sources */,
 				043BFDEA1FD803E60067020B /* AppDelegate.swift in Sources */,
 				040111901FD95EAF0092E6AC /* SettingsViewController.swift in Sources */,

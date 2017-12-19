@@ -7,19 +7,34 @@
 //
 
 import UIKit
+import Firebase
 
 class WelcomeViewController: UIViewController {
+    
+    //MARK: testing email and password
+    let defaultEmail = "123456@mail.com"
+    let defaultPassword = "123456"
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        //MARK: Testing login from welcome screen
+        if defaultEmail != "" && defaultPassword != "" {
+            Auth.auth().signIn(withEmail: defaultEmail, password: defaultPassword) { (user, error) in
+                if error != nil {
+                    print(error?.localizedDescription as Any)
+                } else {
+                    print("Fast login successful")
+                self.performSegue(withIdentifier: "goToContacts", sender: self)
+                }
+            }
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
-
+    
 }
 
