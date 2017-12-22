@@ -12,10 +12,25 @@ import SVProgressHUD
 
 class ContactsViewController: UIViewController {
     
+    //MARK: Constants
+    let appColor = AppColor()
+    
+    //Segue Identifiers
+    let settingsSegueID = "goToSettings"
+    let chatSegueID = "goToChat"
+    
+    //Contact Cell Identifier
+    let contactCellID = "customContactCell"
+    
+    
+    //MARK: IBOutlets
     @IBOutlet weak var contactsTableView: UITableView!
     
-    let appColor = AppColor()
+    //MARK: Variables
     var contactsArray = [Contact]()
+    
+    
+    //MARK: METHODS
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,14 +43,15 @@ class ContactsViewController: UIViewController {
         contactsTableView.dataSource = self
         
         // Register ContactCell.xib file
-        contactsTableView.register(UINib(nibName: "ContactCell", bundle: nil), forCellReuseIdentifier: "customContactCell")
+        contactsTableView.register(UINib(nibName: "ContactCell", bundle: nil), forCellReuseIdentifier: contactCellID)
         
-        configureTableView()
         retrieveContacts()
         
     }
     
-    //MARK: Settings
+    //BAR BUTTONS
+    
+    //Settings
     func createSettingsBarButton() {
         let settingsButton = UIButton()
         settingsButton.setTitle("Settings", for: .normal)
@@ -46,10 +62,10 @@ class ContactsViewController: UIViewController {
     }
     
     @objc func settingsPressed(_ sender: UIButton) {
-        performSegue(withIdentifier: "goToSettings", sender: self)
+        performSegue(withIdentifier: settingsSegueID, sender: self)
     }
     
-    //MARK: Add new contact
+    //Add new contact
     func createAddContactBarButton() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewContactPressed))
     }
@@ -78,34 +94,42 @@ class ContactsViewController: UIViewController {
                         SVProgressHUD.showError(withStatus: "There is no such user")
                     } else {
                         print("There is an active account")
-                            
-                        //TODO: Add new ContactCell to TableView -> Method
+                        print(stringArray as Any)
                         
-                        let contactsDB = Database.database().reference().child("Contacts").child((currentUser?.uid)!)
-                        
-                        //TODO: Cheking new contact for existing in contact list (DOUBLES)
+                        //TODO: Check new contact for existing in contact list (DOUBLES)
                         
                         //  Add new contact in database
-                        let contactDictionary = ["contactEmail" : newContactEmail]
-                        contactsDB.childByAutoId().setValue(contactDictionary) { (error, reference) in
-                            if error != nil {
-                                print(error?.localizedDescription as Any)
-                                SVProgressHUD.showError(withStatus: error?.localizedDescription)
-                            } else {
-                                print("New contact has been added")
-                                SVProgressHUD.showSuccess(withStatus: "New contact has been added")
-                            }
-                        }
+                        self.addNewContactToDB(currentUser: currentUser, newContactEmail: newContactEmail)
                     }
 
                 })
                 
+            } else {
+                print("TextField is empty")
+                SVProgressHUD.showError(withStatus: "You did not enter email")
             }
             
         }))
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    // Add new contact in database
+    func addNewContactToDB (currentUser: User?, newContactEmail: String) {
+        
+        let contactDictionary = ["contactEmail" : newContactEmail]
+        let contactsDB = Database.database().reference().child("Contacts").child((currentUser?.uid)!)
+        
+        contactsDB.childByAutoId().setValue(contactDictionary) { (error, reference) in
+            if error != nil {
+                print(error?.localizedDescription as Any)
+                SVProgressHUD.showError(withStatus: error?.localizedDescription)
+            } else {
+                print("New contact has been added")
+                SVProgressHUD.showSuccess(withStatus: "New contact has been added")
+            }
+        }
     }
     
     // Retrieve contacts
@@ -121,20 +145,33 @@ class ContactsViewController: UIViewController {
             contact.email = contactEmail
             self.contactsArray.append(contact)
             
-            self.configureTableView()
+           // self.configureTableView()
             self.contactsTableView.reloadData()
         }
         
     }
     
+    // Segue to chat
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == chatSegueID {
+            if let cell = sender as? UITableViewCell {
+                let destination = segue.destination as? ChatViewController
+                let contactIndex = contactsTableView.indexPath(for: cell)?.row
+            
+            //TODO: Data -> Chat
+            destination?.contactEmail = self.contactsArray[contactIndex!].email
+            }
+        }
+    }
+    
 }
 
-// MARK: TableView DataSource methods
+// MARK: TableView DataSource and Delegate methods
 extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
     
     // Cell for row in TableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "customContactCell", for: indexPath) as! CustomContactCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: contactCellID, for: indexPath) as! CustomContactCell
         
         cell.avatarImageView.image = UIImage(named: "tennisMeDefaultAvatar")
         cell.contactName.text = contactsArray[indexPath.row].email
@@ -146,10 +183,16 @@ extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
         return contactsArray.count
     }
     
-    // Configure TableView
-    func configureTableView() {
-        contactsTableView.rowHeight = UITableViewAutomaticDimension
-        contactsTableView.estimatedRowHeight = 64
+    // Height for row in TableView
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 64
+    }
+    
+    // Select row -> segue to chat
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        print("Segue to chat with contact: \(contactsArray[indexPath.row].email)")
+        performSegue(withIdentifier: chatSegueID, sender: self)
     }
     
 }

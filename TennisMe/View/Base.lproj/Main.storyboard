@@ -185,7 +185,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lwz-ay-NbI">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContactCell" id="4eD-ol-VmV">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
@@ -194,9 +194,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="vHm-bt-Avf" kind="show" id="Ue0-XC-UBJ"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -214,6 +211,7 @@
                     <connections>
                         <outlet property="contactsTableView" destination="lwz-ay-NbI" id="iyV-j4-R8R"/>
                         <segue destination="ntc-XB-kDW" kind="show" identifier="goToSettings" id="lcO-bc-dL7"/>
+                        <segue destination="vHm-bt-Avf" kind="show" identifier="goToChat" id="Vlc-au-7im"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hDX-5r-Vry" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -228,9 +226,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tennisMeLoginBackground" translatesAutoresizingMaskIntoConstraints="NO" id="dI0-Ug-WvK">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tennisMeLoginBackground" translatesAutoresizingMaskIntoConstraints="NO" id="dI0-Ug-WvK">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
-                                <color key="backgroundColor" red="0.83216959239999999" green="0.98548370600000001" blue="0.47333085539999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dIj-WI-uJa">
                                 <rect key="frame" x="0.0" y="561" width="375" height="42"/>
@@ -257,9 +254,11 @@
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="sendButtonPressed:" destination="vHm-bt-Avf" eventType="touchUpInside" id="cB7-u9-0uP"/>
+                                        </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="WmS-DK-Xje" firstAttribute="leading" secondItem="pMQ-Oc-szU" secondAttribute="trailing" constant="2" id="A45-Db-szu"/>
                                     <constraint firstItem="WmS-DK-Xje" firstAttribute="top" secondItem="dIj-WI-uJa" secondAttribute="top" constant="4" id="Pcj-Le-mm9"/>
@@ -272,22 +271,21 @@
                                     <constraint firstItem="pMQ-Oc-szU" firstAttribute="leading" secondItem="dIj-WI-uJa" secondAttribute="leading" constant="2" id="zgQ-4v-YbW"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="S0z-ae-gBI" userLabel="Message Table View">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="S0z-ae-gBI" userLabel="Message Table View">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="561"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageCell" id="Pws-Ze-ev9" userLabel="MessageCell">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Pws-Ze-ev9" id="CkP-0G-fen">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="dI0-Ug-WvK" secondAttribute="bottom" id="2DD-4C-R4d"/>
                             <constraint firstItem="dI0-Ug-WvK" firstAttribute="leading" secondItem="649-aC-2Ui" secondAttribute="leading" id="2W0-11-ruo"/>
@@ -303,6 +301,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="e7L-1m-o4o"/>
                     </view>
+                    <connections>
+                        <outlet property="messageTableView" destination="S0z-ae-gBI" id="nfy-nf-19m"/>
+                        <outlet property="messageTextField" destination="pMQ-Oc-szU" id="7t0-dz-5b5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S4W-Hk-DDx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

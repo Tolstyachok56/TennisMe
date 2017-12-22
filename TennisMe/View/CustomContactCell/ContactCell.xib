@@ -34,10 +34,11 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K41-ih-CTC" userLabel="Contact Name">
                         <rect key="frame" x="71" y="10" width="300" height="21.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="8g0-Wa-X73" firstAttribute="leading" secondItem="SWc-YC-wDe" secondAttribute="leading" constant="5" id="JB9-sL-x6w"/>
                     <constraint firstItem="K41-ih-CTC" firstAttribute="top" secondItem="SWc-YC-wDe" secondAttribute="top" constant="10" id="Me5-O4-k3a"/>

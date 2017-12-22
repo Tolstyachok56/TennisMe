@@ -10,6 +10,10 @@ import UIKit
 
 class CustomMessageCell: UITableViewCell {
     
+    @IBOutlet weak var messageAvatarImageView: UIImageView!
+    @IBOutlet weak var senderUserName: UILabel!
+    @IBOutlet weak var messageBody: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
