@@ -8,17 +8,13 @@
 
 import UIKit
 
-class CustomContactCell: UIViewController {
+class CustomContactCell: UITableViewCell {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    @IBOutlet weak var avatarImageView: UIImageView!
+    @IBOutlet weak var contactName: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     
 }

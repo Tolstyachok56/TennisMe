@@ -24,6 +24,7 @@
 		043BFDEF1FD803E60067020B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 043BFDED1FD803E60067020B /* Main.storyboard */; };
 		043BFDF11FD803E60067020B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 043BFDF01FD803E60067020B /* Assets.xcassets */; };
 		043BFDF41FD803E60067020B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 043BFDF21FD803E60067020B /* LaunchScreen.storyboard */; };
+		04AEEBEB1FEC4FC700C19C67 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AEEBEA1FEC4FC700C19C67 /* Contact.swift */; };
 		04D030E11FDEA1A60055177B /* Pods_TennisMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D030E21FDEA1A60055177B /* Pods_TennisMe.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,8 @@
 		043BFDF01FD803E60067020B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		043BFDF31FD803E60067020B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		043BFDF51FD803E60067020B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04AEEBE81FEC158600C19C67 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		04AEEBEA1FEC4FC700C19C67 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		04D030E01FDEA1630055177B /* SVProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SVProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D030E21FDEA1A60055177B /* Pods_TennisMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_TennisMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3004996C169E2BCFF9DC3944 /* Pods_TennisMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TennisMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +99,7 @@
 			children = (
 				0401119D1FD9721B0092E6AC /* Message.swift */,
 				0410ABAE1FE9322500A38EF3 /* Color.swift */,
+				04AEEBEA1FEC4FC700C19C67 /* Contact.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -160,6 +164,7 @@
 		28E5C196DC9D6E0119F6A311 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				04AEEBE81FEC158600C19C67 /* CoreData.framework */,
 				04D030E21FDEA1A60055177B /* Pods_TennisMe.framework */,
 				04D030E01FDEA1630055177B /* SVProgressHUD.framework */,
 				3004996C169E2BCFF9DC3944 /* Pods_TennisMe.framework */,
@@ -318,6 +323,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04AEEBEB1FEC4FC700C19C67 /* Contact.swift in Sources */,
 				0401119C1FD96A070092E6AC /* CustomMessageCell.swift in Sources */,
 				043BFDEC1FD803E60067020B /* WelcomeViewController.swift in Sources */,
 				0410ABAF1FE9322500A38EF3 /* Color.swift in Sources */,
