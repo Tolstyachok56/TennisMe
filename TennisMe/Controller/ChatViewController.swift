@@ -38,6 +38,10 @@ class ChatViewController: UIViewController {
         // Set yourself as the delegate of TextField
         messageTextField.delegate = self
         
+        // tapGesture
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tableViewTapped))
+        messageTableView.addGestureRecognizer(tapGesture)
+        
         // Register MessageCell.xib file
         messageTableView.register(UINib(nibName: "MessageCell", bundle: nil), forCellReuseIdentifier: "customMessageCell")
         
@@ -113,11 +117,21 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     
     // Cell for row in TableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let messageBody = messageArray[indexPath.row].message
+        let messageSender = messageArray[indexPath.row].sender
+        let currentUser = Auth.auth().currentUser
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "customMessageCell", for: indexPath) as! CustomMessageCell
         
         cell.messageAvatarImageView.image = UIImage(named: "tennisMeDefaultAvatar")
-        cell.messageBody.text = messageArray[indexPath.row].message
-        cell.senderUserName.text = messageArray[indexPath.row].sender
+        cell.messageBody.text = messageBody
+        cell.senderUserName.text = messageSender
+        if messageSender == currentUser?.email {
+            cell.messageContainer.backgroundColor = UIColor.flatLime()
+            cell.senderUserName.textAlignment = .right
+            cell.messageBody.textAlignment = .right
+        }
         return cell
     }
     
@@ -129,7 +143,12 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     // Configure TableView
     func configureTableView() {
         messageTableView.rowHeight = UITableViewAutomaticDimension
-        messageTableView.estimatedRowHeight = 120
+        messageTableView.estimatedRowHeight = 100
+    }
+    
+    // TableView tapped
+    @objc func tableViewTapped() {
+        messageTextField.endEditing(true)
     }
     
 }
@@ -162,7 +181,6 @@ extension ChatViewController: UITextFieldDelegate {
     // End editing TextField
     func textFieldDidEndEditing(_ textField: UITextField) {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-        
         UIView.animate(withDuration: 0.5) {
             self.heightConstraint.constant = 42
             self.view.layoutIfNeeded()
