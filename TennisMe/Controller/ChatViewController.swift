@@ -24,6 +24,8 @@ class ChatViewController: UIViewController {
     var messageArray = [Message]()
     
     var keyboardHeight: CGFloat = 0
+    let appColor = AppColor()
+    
     
     
     //MARK: METHODS
@@ -136,6 +138,10 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
             cell.messageContainer.backgroundColor = UIColor.flatLime()
             cell.senderUserName.textAlignment = .right
             cell.messageBody.textAlignment = .right
+        } else {
+            cell.messageContainer.backgroundColor = appColor.green
+            cell.senderUserName.textAlignment = .left
+            cell.messageBody.textAlignment = .left
         }
         return cell
     }
