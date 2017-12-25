@@ -51,6 +51,7 @@ class ChatViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         navigationItem.title = contactEmail
+        messageTextField.borderStyle = .roundedRect
     }
     
     // Retrieve messages
@@ -78,6 +79,10 @@ class ChatViewController: UIViewController {
                 
                 self.configureTableView()
                 self.messageTableView.reloadData()
+                
+                // Scroll TableView to last message
+                let bottomIndexPath = IndexPath(row: self.messageArray.count-1, section: 0)
+                self.messageTableView.scrollToRow(at: bottomIndexPath, at: .bottom, animated: false)
             }
         }
     }
@@ -150,6 +155,7 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     @objc func tableViewTapped() {
         messageTextField.endEditing(true)
     }
+    
     
 }
 
