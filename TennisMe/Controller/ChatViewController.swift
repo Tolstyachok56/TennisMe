@@ -159,8 +159,10 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
+
 //////////////////////////////////
 //MARK: TextField Delegate methods
+
 extension ChatViewController: UITextFieldDelegate {
     
     // Keyboard shows

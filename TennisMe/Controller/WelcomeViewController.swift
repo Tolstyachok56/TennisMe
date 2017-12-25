@@ -12,8 +12,8 @@ import Firebase
 class WelcomeViewController: UIViewController {
     
     //MARK: testing email and password
-    let defaultEmail = "123456@mail.com"
-    let defaultPassword = "123456"
+    let defaultEmail = ""
+    let defaultPassword = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -156,6 +156,7 @@ class ContactsViewController: UIViewController {
         if segue.identifier == chatSegueID {
             if let contactIndex = self.contactsTableView.indexPathForSelectedRow {
                 let destination = segue.destination as? ChatViewController
+                
             // Data -> Chat
                 destination?.contactEmail = self.contactsArray[contactIndex.row].email
             }
