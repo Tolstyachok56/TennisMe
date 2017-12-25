@@ -154,12 +154,10 @@ class ContactsViewController: UIViewController {
     // Segue to chat
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == chatSegueID {
-            if let cell = sender as? UITableViewCell {
+            if let contactIndex = self.contactsTableView.indexPathForSelectedRow {
                 let destination = segue.destination as? ChatViewController
-                let contactIndex = contactsTableView.indexPath(for: cell)?.row
-            
-            //TODO: Data -> Chat
-            destination?.contactEmail = self.contactsArray[contactIndex!].email
+            // Data -> Chat
+                destination?.contactEmail = self.contactsArray[contactIndex.row].email
             }
         }
     }
@@ -190,9 +188,9 @@ extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
     
     // Select row -> segue to chat
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: chatSegueID, sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
         print("Segue to chat with contact: \(contactsArray[indexPath.row].email)")
-        performSegue(withIdentifier: chatSegueID, sender: self)
     }
     
 }
